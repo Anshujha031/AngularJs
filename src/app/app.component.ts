@@ -1,15 +1,25 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
-  standalone: true
+  styleUrl: './app.component.css',
+  imports : [RouterOutlet,FormsModule]
+
 })
 export class AppComponent {
   title = 'Hello from BridgeLabz.';
-  imageUrl = 'assets/logo.jpg'; // Ensure this file exists in src/assets/
+  imageUrl = 'assets/imgurl.jpg'; // Ensure this file exists in src/assets/
+
   url = 'https://www.bridgelabz.com';
+  userName: string = '';
+
+  ngOnInit(): void {
+    this.title = 'Hello from BridgeLabz.';
+  }
 
   onClick(event: Event): void {
     console.log('BridgeLabz logo clicked!', event);
