@@ -1,17 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  standalone: true
 })
 export class AppComponent {
-  title = 'HelloWorldApp';
+  title = 'Hello from BridgeLabz.';
+  imageUrl = 'assets/logo.jpg'; // Ensure this file exists in src/assets/
+  url = 'https://www.bridgelabz.com';
 
-  ngOnInit() : void {
-    this.title = "Hello from BridgeLabz.";
+  onClick(event: Event): void {
+    console.log('BridgeLabz logo clicked!', event);
+    window.open(this.url, '_blank');
   }
 }
